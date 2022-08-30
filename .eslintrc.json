@@ -5,11 +5,10 @@
 	},
 	"extends": [
 		"eslint:recommended",
-		"plugin:react/recommended",
 		"plugin:@typescript-eslint/recommended",
-		"eslint:recommended",
 		"plugin:react/recommended",
-		"plugin:prettier/recommended"
+		"plugin:prettier/recommended",
+		"prettier"
 	],
 	"overrides": [],
 	"parser": "@typescript-eslint/parser",
@@ -19,17 +18,14 @@
 	},
 	"plugins": ["react", "@typescript-eslint", "prettier"],
 	"rules": {
+		"no-unused-vars": 0,
+		"@typescript-eslint/no-unused-vars": ["error"],
+		"react/react-in-jsx-scope": 0,
 		"prettier/prettier": [
 			"error",
 			{
 				"endOfLine": "auto"
 			}
-		],
-		"no-unused-vars": 0,
-		"@typescript-eslint/no-unused-vars": ["error"],
-		"react/react-in-jsx-scope": 0,
-		"indent": ["error", "tab"],
-		"quotes": ["error", "single"],
-		"semi": ["error", "always"]
+		]
 	}
 }

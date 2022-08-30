@@ -16,7 +16,10 @@ export default function Button(props: IButton) {
 	if (props.textStyle) textStyle = props.textStyle;
 
 	return (
-		<Pressable style={tw`m-1 p-3 ${style}`} onPress={onPress}>
+		<Pressable
+			style={tw`m-1 p-3 ${style}`}
+			onPress={onPress}
+		>
 			<Text style={tw`${textStyle}`}>{text}</Text>
 		</Pressable>
 	);

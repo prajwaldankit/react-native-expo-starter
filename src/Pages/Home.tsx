@@ -83,7 +83,10 @@ export default function HomePage() {
 				placeholder="Insert a Task"
 				keyboardType="default"
 			/>
-			<Button onPress={addTask} text="Add Task" />
+			<Button
+				onPress={addTask}
+				text="Add Task"
+			/>
 			{tasks.map((task, index) => (
 				<TodoTask
 					key={index}
