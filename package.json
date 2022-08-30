@@ -14,7 +14,8 @@
 		"lint": "npm run lint:eslint",
 		"format:prettier": "npm run prettier:base -- --write \"**/*.{js,ts,tsx,json,md,mdx}\"",
 		"format:eslint": "npm run eslint:base -- --fix \"**/*.{js,ts,tsx,mdx}\"",
-		"format": "npm run format:eslint && npm run format:prettier"
+		"format": "npm run format:eslint && npm run format:prettier",
+		"prepare": "husky install"
 	},
 	"dependencies": {
 		"expo": "~46.0.9",
@@ -36,7 +37,8 @@
 		"eslint-plugin-prettier": "^4.2.1",
 		"eslint-plugin-react": "^7.31.1",
 		"prettier": "^2.7.1",
-		"typescript": "^4.8.2"
+		"typescript": "^4.8.2",
+		"husky": "^8.0.0"
 	},
 	"private": true
 }
