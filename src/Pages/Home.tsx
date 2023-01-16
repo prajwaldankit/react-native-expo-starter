@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { Text, View, TextInput } from 'react-native';
-import tw from 'twrnc';
 
 import Button from '../components/Button';
+import Filter from '../components/Filter';
+import ThemeSelector from '../components/ThemeSelector';
 
 type TodoType = {
 	id: number;
@@ -27,10 +27,10 @@ const TodoTask = (props: ITodo) => {
 
 	return (
 		<View
-			style={tw`flex flex-row justify-between m-1 border border-green-500  ${style}`}
+			className={`flex flex-row justify-between m-1 border border-green-500 ${style}`}
 		>
 			<Text
-				style={tw`self-center p-2 bg-yellow-50 `}
+				className="self-center p-2 bg-yellow-50"
 				onPress={() => onPress(id)}
 			>
 				{title}
@@ -52,6 +52,7 @@ export default function HomePage() {
 	const handleTask = (value: string) => setTask(value);
 
 	const toggleTask = (id: TodoType['id']) => {
+		console.log(id);
 		setTasks([
 			...tasks.map((t) => (id === t.id ? { ...t, completed: !t.completed } : t))
 		]);
@@ -74,10 +75,10 @@ export default function HomePage() {
 	};
 
 	return (
-		<View style={tw`flex-1 bg-yellow-100 justify-center content-center`}>
-			<Text style={tw`text-black font-bold self-center`}>Todo App</Text>
+		<View className="h-full bg-yellow-100 dark:bg-slate-800">
+			<Text className="text-black font-bold self-center mt-8">Todo App</Text>
 			<TextInput
-				style={tw`p-1 m-2 border border-green-500`}
+				className="p-1 m-2 border border-green-500"
 				onChangeText={handleTask}
 				value={task}
 				placeholder="Insert a Task"
@@ -95,7 +96,12 @@ export default function HomePage() {
 					onLongPress={deleteTask}
 				/>
 			))}
-			<StatusBar style="auto" />
+			{/* <StatusBar
+				// style="auto"
+				translucent={true}
+			/> */}
+			<Filter />
+			<ThemeSelector />
 		</View>
 	);
 }

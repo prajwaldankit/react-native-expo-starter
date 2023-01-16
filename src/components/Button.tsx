@@ -1,6 +1,5 @@
 import React from 'react';
 import { Text, Pressable } from 'react-native';
-import tw from 'twrnc';
 
 interface IButton {
 	text: string;
@@ -18,10 +17,10 @@ export default function Button(props: IButton) {
 
 	return (
 		<Pressable
-			style={tw`m-1 p-3 ${style}`}
+			className={`m-1 p-3 ${style}`}
 			onPress={onPress}
 		>
-			<Text style={tw`${textStyle}`}>{text}</Text>
+			<Text className={`${textStyle}`}>{text}</Text>
 		</Pressable>
 	);
 }
