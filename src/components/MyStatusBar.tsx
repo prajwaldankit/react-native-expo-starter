@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { useColorScheme } from 'nativewind';
 import { StatusBar } from 'expo-status-bar';
 

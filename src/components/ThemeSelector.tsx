@@ -1,27 +1,17 @@
-import React from 'react';
 import { View, TouchableHighlight, Image } from 'react-native';
 import { useColorScheme } from 'nativewind';
-// import lightModeIcon from '@assets/icons/lightMode.png';
-// import darkModeIcon from '@assets/icons/darkMode.png';
+import lightModeIcon from '@Assets/icons/lightMode.png';
+import darkModeIcon from '@Assets/icons/darkMode.png';
 
 export default function ThemeSelector() {
 	const { colorScheme, toggleColorScheme } = useColorScheme();
 
-	const icon =
-		colorScheme === 'dark'
-			? require('../../assets/icons/lightMode.png')
-			: require('../../assets/icons/darkMode.png');
+	const icon = colorScheme === 'dark' ? lightModeIcon : darkModeIcon;
 
 	return (
-		<View className="absolute bottom-3 right-3">
+		<View className="right-3 bottom-3 absolute">
 			<TouchableHighlight onPress={toggleColorScheme}>
 				<Image source={icon} />
-				{/* <Text
-				onPress={toggleColorScheme}
-				className="border-red-900 bg-zinc-200 h-full "
-			>
-				Toggle Theme
-			</Text> */}
 			</TouchableHighlight>
 		</View>
 	);
